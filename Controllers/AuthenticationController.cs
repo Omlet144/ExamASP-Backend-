@@ -125,8 +125,7 @@ namespace WebApplicationClient.Controllers
                 await _roleManager.CreateAsync(new IdentityRole(UserRoles.Manager));
             if (!await _roleManager.RoleExistsAsync(UserRoles.User))
                 await _roleManager.CreateAsync(new IdentityRole(UserRoles.User));
-
-
+    
             //Доступно только то, что авторизированно админу !
             if (await _roleManager.RoleExistsAsync(UserRoles.Manager))
                 await _userManager.AddToRoleAsync(user, UserRoles.Manager);
