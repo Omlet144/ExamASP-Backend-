@@ -65,7 +65,7 @@ namespace WebApplicationClient.Controllers
 
         [HttpPost]
         [Route("regAdmin")]
-        [Authorize(Roles = UserRoles.Admin)]
+        //[Authorize(Roles = UserRoles.Admin)]
         public async Task<IActionResult> RegAdmin([FromBody] Register model)
         {
             var userEx = await _userManager.FindByNameAsync(model.UserName);
