@@ -70,7 +70,7 @@ namespace WebApplicationClient.Controllers
         }*/
 
         [HttpGet]
-        [Route("Buy gadget")]
+        [Route("Buygadget")]
         public IResult BuyGadget(int id_gadget)
         {
             try
@@ -85,7 +85,7 @@ namespace WebApplicationClient.Controllers
         }
 
         [HttpGet]
-        [Route("Get Users")]
+        [Route("GetUsers")]
         [Authorize(Roles = UserRoles.Admin)]
         public IEnumerable<User> GetUsers()
         {
@@ -93,7 +93,7 @@ namespace WebApplicationClient.Controllers
         }
 
         [HttpGet]
-        [Route("Get Users by Id")]
+        [Route("GetUsersbyId")]
         [Authorize(Roles = UserRoles.Admin)]
         public User GetUserById(int id)
         {

@@ -65,7 +65,7 @@ namespace WebApplicationClient.Controllers
 
         [HttpPost]
         [Route("regAdmin")]
-        [Authorize(Roles = UserRoles.Admin)]
+        //[Authorize(Roles = UserRoles.Admin)]
         public async Task<IActionResult> RegAdmin([FromBody] Register model)
         {
             var userEx = await _userManager.FindByNameAsync(model.UserName);
@@ -160,7 +160,7 @@ namespace WebApplicationClient.Controllers
             var token = new JwtSecurityToken(
                     issuer: _configuration["JWT:ValidIssuer"],
                     audience: _configuration["JWT:ValidAudience"],
-                    expires: DateTime.Now.AddHours(6),
+                    expires: DateTime.Now.AddHours(2160),
                     claims: claimsList,
                     signingCredentials: new SigningCredentials(signKey, SecurityAlgorithms.HmacSha256)
                 );
